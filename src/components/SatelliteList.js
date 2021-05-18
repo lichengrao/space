@@ -16,24 +16,22 @@ const SatelliteList = (props) => {
     props.onShowMap(selected);
   };
 
-  const onChange = (e) => {
+  const onChange = async (e) => {
     const { dataInfo, checked } = e.target;
-    const list = addOrRemove(dataInfo, checked, selected);
-    setSelected(list);
+    addOrRemove(dataInfo, checked, selected);
   };
 
   const addOrRemove = (item, status, list) => {
     const found = list.some((entry) => entry.satid === item.satid);
 
     if (status && !found) {
-      list.push(item);
+      setSelected([...list, item]);
     }
 
     if (!status && found) {
       list = list.filter((entry) => entry.satid !== item.satid);
+      setSelected(list);
     }
-
-    return list;
   };
 
   return (
