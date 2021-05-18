@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Spin, List, Avatar, Checkbox } from "antd";
 
 import satellite from "../assets/images/satellite.svg";
@@ -7,6 +7,10 @@ const SatelliteList = (props) => {
   const [selected, setSelected] = useState([]);
   const { satInfo, isLoad } = props;
   const satList = satInfo ? satInfo.above : [];
+
+  useEffect(() => {
+    setSelected([]);
+  }, [satInfo]);
 
   const showMap = () => {
     props.onShowMap(selected);
