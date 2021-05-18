@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="App-header">
       <img src={starlink_logo} className="App-logo" alt="logo" />
-      <p className="title">Starlink Tracker</p>
+      <p className="title">Space: A Starlink Tracker</p>
     </header>
   );
 };
