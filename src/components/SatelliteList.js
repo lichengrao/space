@@ -3,9 +3,8 @@ import { Button, Spin, List, Avatar, Checkbox } from "antd";
 
 import satellite from "../assets/images/satellite.svg";
 
-const SatelliteList = (props) => {
+const SatelliteList = ({ satInfo, isLoad, onShowMap }) => {
   const [selected, setSelected] = useState([]);
-  const { satInfo, isLoad } = props;
   const satList = satInfo ? satInfo.above : [];
 
   useEffect(() => {
@@ -13,7 +12,7 @@ const SatelliteList = (props) => {
   }, [satInfo]);
 
   const showMap = () => {
-    props.onShowMap(selected);
+    onShowMap(selected);
   };
 
   const onChange = async (e) => {
