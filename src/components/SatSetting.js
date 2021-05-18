@@ -3,6 +3,7 @@ import { Button, Form, InputNumber } from "antd";
 
 const SatSettingForm = ({ form, onShow }) => {
   const { getFieldDecorator } = form;
+
   const formItemLayout = {
     labelCol: {
       xs: { span: 24 },
@@ -13,6 +14,7 @@ const SatSettingForm = ({ form, onShow }) => {
       sm: { span: 13 },
     },
   };
+
   const showSatellite = (e) => {
     e.preventDefault();
     form.validateFields((err, values) => {
