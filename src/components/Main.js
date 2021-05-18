@@ -26,7 +26,7 @@ const Main = () => {
     setIsLoadingList(true);
     try {
       const response = await axios.get(url);
-      console.log(response.data);
+      // console.log(response.data);
       setSatInfo(response.data);
     } catch (error) {
       console.log("err in fetch satellite -> ", error);
