@@ -6,7 +6,7 @@ import SatSetting from "./SatSetting";
 import SatelliteList from "./SatelliteList";
 import WorldMap from "./WorldMap";
 
-import { NEARBY_SATELLITE, SAT_API_KEY, STARLINK_CATEGORY } from "../constants";
+import { STARLINK_CATEGORY } from "../constants";
 
 const Main = () => {
   const [satInfo, setSatInfo] = useState(null);
@@ -21,7 +21,7 @@ const Main = () => {
 
   const fetchSatellite = async (setting) => {
     const { latitude, longitude, elevation, altitude } = setting;
-    const url = `/api/${NEARBY_SATELLITE}/${latitude}/${longitude}/${elevation}/${altitude}/${STARLINK_CATEGORY}/&apiKey=${SAT_API_KEY}`;
+    const url = `/api/nearby/${latitude}/${longitude}/${elevation}/${altitude}/${STARLINK_CATEGORY}`;
 
     setIsLoadingList(true);
     try {

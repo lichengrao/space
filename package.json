@@ -4,5 +4,12 @@
   "main": "index.js",
   "repository": "https://github.com/lichengrao/space.git",
   "author": "Chan Rao <lichengrao@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
 }
